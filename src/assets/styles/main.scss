@@ -1,0 +1,12 @@
+// BASE
+@import "./base/common";
+
+// COMPONENT STYLE
+@import "./components/comp-authlayer";
+@import "./components/comp-header";
+@import "./components/comp-banner";
+@import "./components/comp-breadcrumbs";
+
+// SECTION STYLE
+@import "./pageviews/page_auth.scss";
+@import "./pageviews/page_services.scss";

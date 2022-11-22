@@ -1,0 +1,124 @@
+// @import url("assets/fonts/aeroportwf/stylesheet.css");
+
+$mainblue: #1c4fd1;
+// $mainblue: #800606;
+$mainblack: #18181c;
+$maingrey: #858da3;
+$mainwhite: #ffffff;
+$maingreen: #2cad7f;
+$mainred: #ff3535;
+
+*,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  outline: none;
+  font-family: "Aeroport";
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(28, 79, 209, 0.5);
+    border-radius: 10px;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+img {
+  display: flex;
+}
+
+section {
+  overflow: hidden;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.disable-text {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.main {
+  margin-top: 80px;
+}
+
+body {
+  background: #fafafa;
+  overflow-y: scroll;
+  min-width: 320px;
+}
+
+@media (max-width: 1250px) {
+  .container {
+    width: 100%;
+    max-width: 992px;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .main {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 576px;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: unset;
+  }
+}

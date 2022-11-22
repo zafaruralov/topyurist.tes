@@ -1,0 +1,139 @@
+.auth {
+  &_interactives {
+    width: 45%;
+    flex-shrink: 0;
+    padding: 0px 50px 50px 50px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_logo {
+    width: 180px;
+    height: 90px;
+    margin-bottom: 42px;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &_languages {
+    display: flex;
+    margin-bottom: 40px;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_language {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 150%;
+    transition: all 0.3s;
+    color: $mainblue;
+    opacity: 0.4;
+    padding: 5px;
+    cursor: pointer;
+
+    &.current,
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &_bgimage {
+    width: 458px;
+    height: 458px;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: all 0.3s;
+      animation: breathing 6s infinite ease-in-out;
+    }
+  }
+
+  &_credentials {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    text-align: center;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $mainblack;
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 992px) {
+  .auth {
+    &_interactives {
+      width: 45%;
+    }
+
+    &_logo {
+      width: 100px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    &_languages {
+      margin-bottom: 10px;
+    }
+
+    &_language {
+      font-size: 14px;
+    }
+
+    &_bgimage {
+      width: 100%;
+      height: 300px;
+    }
+
+    &_credentials {
+      bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .auth {
+    &_interactives {
+      width: 100%;
+      padding: 0;
+    }
+
+    &_logo {
+      width: 80px;
+      height: 40px;
+      filter: brightness(0) opacity(0.3);
+    }
+
+    &_languages {
+      margin-bottom: 10px;
+    }
+
+    &_bgimage {
+      width: 250px;
+      display: none;
+      height: 250px;
+    }
+
+    &_credentials {
+      position: unset;
+      transform: none;
+    }
+  }
+}
