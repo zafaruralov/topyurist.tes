@@ -244,7 +244,7 @@ const PersonalData = () => {
           </div>
           <Modal ref={modal}>
             <form className="pfpdata__modal" onSubmit={onSubmit}>
-              <h1 className="pfpdata__modal-title">{t("profile")}</h1>
+              <h1 className="pfpdata__modal-title">{("profile")}</h1>
               <img className="pfpdata__user-img" src={imageUrl} alt="avatar" />
               <input
                 type="file"
@@ -253,15 +253,15 @@ const PersonalData = () => {
                 style={{ display: "none" }}
               />
               <p className="pfpdata__modal-upload" onClick={handleClick}>
-                {t("change_photo")}
+                {("change_photo")}
               </p>
-              <p className="pfpdata__modal-desc">{t("with_photo_title")}</p>
+              <p className="pfpdata__modal-desc">{("with_photo_title")}</p>
 
               <input
                 className="pfpdata__modal-input"
                 type="text"
                 value={fullName}
-                placeholder={t("write_fio")}
+                placeholder={("write_fio")}
                 onChange={(e) => setfullName(e.target.value)}
               />
               <CustomSelect
@@ -271,13 +271,13 @@ const PersonalData = () => {
                 selected={selectedCategory}
               />
               <p className="pfpdata__modal-phone">
-                {t("phone_number")}: +{username}
+                {("phone_number")}: +{username}
               </p>
 
               <Button
                 className="pfpdata__modal-btn"
                 type="submit"
-                title={t("save")}
+                title={("save")}
               />
             </form>
           </Modal>

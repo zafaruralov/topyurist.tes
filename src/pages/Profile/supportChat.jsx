@@ -47,11 +47,11 @@ const Index = () => {
   //   onSuccess: () => setTimeout(() => scrollDown(), 50),
   // });
 
-  useEffect(() => {
-    if (!isLoading && !isError) {
-      setMessagepage(message?.data.reverse());
-    }
-  }, [message]);
+  // useEffect(() => {
+  //   if (!isLoading && !isError) {
+  //     setMessagepage(message?.data.reverse());
+  //   }
+  // }, [message]);
 
   const scrollDown = () => {
     messagesList.current.scrollTop = messagesList.current.scrollHeight;
@@ -65,25 +65,25 @@ const Index = () => {
   //   },
   // });
 
-  const sendMessage = (e) => {
-    e.preventDefault();
-    createMessage.mutate({
-      method: "post",
-      link: `/profile/support/chat/message`,
-      body: { message_type: "TEXT", text: messageValue },
-    });
-  };
+  // const sendMessage = (e) => {
+  //   e.preventDefault();
+  //   createMessage.mutate({
+  //     method: "post",
+  //     link: `/profile/support/chat/message`,
+  //     body: { message_type: "TEXT", text: messageValue },
+  //   });
+  // };
 
-  const onFileChangeCapture = (event) => {
-    uploader(event).then((resp) => {
-      const img = resp();
-      createMessage.mutate({
-        method: "post",
-        link: `/profile/support/chat/message`,
-        body: { message_type: "PHOTO", photo: img, caption: "test image" },
-      });
-    });
-  };
+  // const onFileChangeCapture = (event) => {
+  //   uploader(event).then((resp) => {
+  //     const img = resp();
+  //     createMessage.mutate({
+  //       method: "post",
+  //       link: `/profile/support/chat/message`,
+  //       body: { message_type: "PHOTO", photo: img, caption: "test image" },
+  //     });
+  //   });
+  // };
 
   return (
     <div className="support">
@@ -125,7 +125,7 @@ const Index = () => {
                   type="file"
                   ref={inputFileRef}
                   style={{ display: "none" }}
-                  onChangeCapture={onFileChangeCapture}
+                  // onChangeCapture={onFileChangeCapture}
                 />
                 <button
                   className="chat__conversation-writerbtn"
@@ -142,7 +142,7 @@ const Index = () => {
               ></textarea>
               <button
                 className="chat__conversation-writerbtn"
-                onClick={sendMessage}
+                // onClick={sendMessage}
               >
                 <img src={iconSend} alt="" />
               </button>

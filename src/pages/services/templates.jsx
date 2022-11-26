@@ -13,7 +13,7 @@ import iconEdit from "../../assets/images/icon-edit.svg";
 import iconTrash from "../../assets/images/icon-trash-red.svg";
 import { ToastError } from "../../components/Toast";
 
-const templates = () => {
+const Templates = () => {
   const { t } = useTranslation();
   const [value, setValue] = useState("");
   const [actionData, setActionData] = useState({});
@@ -23,38 +23,40 @@ const templates = () => {
   //   link: "/message_template/list",
   // });
 
-  const createTemplate = useMutate({
-    onSuccess: () => {
-      refetch();
-      toggleModal();
-      setActionData({});
-      ToastSuccess(t("template_created"));
-    },
-  });
+  // const createTemplate = useMutate({
+  //   onSuccess: () => {
+  //     refetch();
+  //     toggleModal();
+  //     setActionData({});
+  //     ToastSuccess(t("template_created"));
+  //   },
+  // });
 
-  const updateTemplate = useMutate({
-    onSuccess: () => {
-      refetch();
-      toggleModal();
-      setActionData({});
-      ToastSuccess(t("template_created"));
-    },
-  });
+  // const updateTemplate = useMutate({
+  //   onSuccess: () => {
+  //     refetch();
+  //     toggleModal();
+  //     setActionData({});
+  //     ToastSuccess(t("template_created"));
+  //   },
+  // });
 
-  const deleteTemplate = useMutate({
-    onSuccess: () => {
-      refetch();
-      ToastError("Template deleted successfully");
-    },
-  });
+  const data = []
 
-  if (isLoading) return <CustomLoader type="fixed" />;
-  if (isError) return <p>Error</p>;
+  // const deleteTemplate = useMutate({
+  //   onSuccess: () => {
+  //     refetch();
+  //     ToastError("Template deleted successfully");
+  //   },
+  // });
 
-  const toggleModal = () => {
-    setIsModalOpen((prev) => !prev);
-    setValue("");
-  };
+  // if (isLoading) return <CustomLoader type="fixed" />;
+  // if (isError) return <p>Error</p>;
+
+  // const toggleModal = () => {
+  //   setIsModalOpen((prev) => !prev);
+  //   setValue("");
+  // };
 
   const crumbs = [
     {
@@ -62,41 +64,41 @@ const templates = () => {
       link: "/",
     },
     {
-      title: t("templates"),
+      title:t("templates"),
       link: `/templates`,
     },
   ];
 
-  const saveTemplate = () => {
-    if (Object.keys(actionData).length) {
-      updateTemplate.mutate({
-        method: "put",
-        body: { description: value },
-        link: `/message_template/update?id=${actionData.id}`,
-      });
-    } else {
-      createTemplate.mutate({
-        link: "/message_template/create",
-        body: { description: value },
-        method: "post",
-      });
-    }
-  };
+  // const saveTemplate = () => {
+  //   if (Object.keys(actionData).length) {
+  //     updateTemplate.mutate({
+  //       method: "put",
+  //       body: { description: value },
+  //       link: `/message_template/update?id=${actionData.id}`,
+  //     });
+  //   } else {
+  //     createTemplate.mutate({
+  //       link: "/message_template/create",
+  //       body: { description: value },
+  //       method: "post",
+  //     });
+  //   }
+  // };
 
-  const handleUpdate = (element) => {
-    setActionData(element);
-    setValue(element.description);
-    setIsModalOpen(true);
-  };
+  // const handleUpdate = (element) => {
+  //   setActionData(element);
+  //   setValue(element.description);
+  //   setIsModalOpen(true);
+  // };
 
-  const handleDelete = ({ id }) => {
-    if (id) {
-      deleteTemplate.mutate({
-        method: "delete",
-        link: `/message_template/delete?id=${id}`,
-      });
-    }
-  };
+  // const handleDelete = ({ id }) => {
+  //   if (id) {
+  //     deleteTemplate.mutate({
+  //       method: "delete",
+  //       link: `/message_template/delete?id=${id}`,
+  //     });
+  //   }
+  // };
 
   return (
     <section className="services">
@@ -109,7 +111,7 @@ const templates = () => {
             <div className="services__categories">
               <button
                 className="services__btn services__categories-toggler"
-                onClick={toggleModal}
+                // onClick={toggleModal}
               >
                 <p>{t("add_templates")}</p>
               </button>
@@ -128,14 +130,14 @@ const templates = () => {
                 <div className="templates__action">
                   <div
                     className="templates__action-item"
-                    onClick={() => handleUpdate(el)}
+                    // onClick={() => handleUpdate(el)}
                   >
                     <img src={iconEdit} alt="icon" />
                     <p>{t("update")} </p>
                   </div>
                   <div
                     className="templates__action-item delete"
-                    onClick={() => handleDelete(el)}
+                    // onClick={() => handleDelete(el)}
                   >
                     <img src={iconTrash} alt="icon" />
                     <p>{t("delete")} </p>
@@ -158,18 +160,20 @@ const templates = () => {
                 onChange={(e) => setValue(e.target.value)}
               ></textarea>
 
-              {updateTemplate.isLoading || createTemplate.isLoading ? (
+              {/* {updateTemplate.isLoading || createTemplate.isLoading ? ( */}
                 <Button title="Loading..." />
-              ) : (
+               : (
                 <Button
                   title={
                     Object.keys(actionData).length ? t("update") : t("send")
                   }
-                  onClick={saveTemplate}
+                  // onClick={saveTemplate}
                 />
-              )}
+              )
             </div>
-            <button className="modal__close" onClick={toggleModal}>
+            <button className="modal__close" 
+            // onClick={toggleModal}
+            >
               <img src={iconModalclose} alt="modalclose" />
             </button>
           </div>
@@ -179,4 +183,4 @@ const templates = () => {
   );
 };
 
-export default templates;
+export default Templates;

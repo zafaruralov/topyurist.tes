@@ -16,9 +16,16 @@ const Index = () => {
   // const { data, isLoading, isError } = useGet({ ========>
   //   link: "/profile/faq",
   // });
+  const data = [
+    {
+      id: "71c87201-0973-4770-912f-54f8c8b3945e",
+      sort: 1,
+      title: {ru_ru: "Top Yurist бесплатен для посетителей?", uz_uz: "", us_en: "", uz_lat: ""},
+    }
+  ]
 
-  if (isLoading) return <CustomLoader />;
-  if (isError) return <p>Error</p>;
+  // if (isLoading) return <CustomLoader />;
+  // if (isError) return <p>Error</p>;
 
   return (
     <div className="faq">

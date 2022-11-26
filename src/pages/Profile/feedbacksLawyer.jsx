@@ -10,7 +10,7 @@ import CustomLoader from "../../components/Loader";
 import iconAvatar from "../../assets/images/icon-useravatar.svg";
 import iconLocation from "../../assets/images/icon-location.svg";
 
-const feedbacksLawyer = () => {
+const FeedbacksLawyer = () => {
   const { t } = useTranslation();
   const [filter, setFilter] = useState("all");
 
@@ -19,9 +19,10 @@ const feedbacksLawyer = () => {
   };
 
   // const changeReviewShowStatus = useMutae({})
+  const data = []
 
-  if (isLoading) return <CustomLoader />;
-  if (isError) return <p>Error</p>;
+  // if (isLoading) return <CustomLoader />;
+  // if (isError) return <p>Error</p>;
 
   const tabs = [
     {
@@ -47,7 +48,7 @@ const feedbacksLawyer = () => {
       <Tabs tabitems={tabs} changeTab={changeTab} />
 
       <div className="pffeeds__list">
-        {data.data.map((item) => (
+        {data.map((item) => (
           <div className="case__card" key={item.id}>
             <div className="case__card-cap">
               <img
@@ -77,7 +78,7 @@ const feedbacksLawyer = () => {
                   type="checkbox"
                   id="check1"
                   checked={item.shaw_in_lawyer_profile}
-                  onChange={(e) => toggleReview(e, item.id)}
+                  // onChange={(e) => toggleReview(e, item.id)}
                 />
                 <label htmlFor="check1">
                   <span></span>
@@ -91,4 +92,4 @@ const feedbacksLawyer = () => {
   );
 };
 
-export default feedbacksLawyer;
+export default FeedbacksLawyer;

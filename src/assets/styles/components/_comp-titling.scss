@@ -1,0 +1,23 @@
+.titling {
+    margin-bottom: 20px;
+
+    &__title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 120%;
+        color: $mainblack;
+    }
+}
+
+@media (max-width: 768px) {
+    .titling {
+        margin-bottom: 15px;
+
+        &__title {
+            font-size: 22px;
+        }
+    }
+}
+
+@media (max-width: 576px) {}

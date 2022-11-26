@@ -1,12 +1,29 @@
-// BASE
+// COMMON STYLES
 @import "./base/common";
+// @import "./base/mixins";
 
-// COMPONENT STYLE
+// COMPONENT STYLES
+@import "./components/comp-modal";
 @import "./components/comp-authlayer";
-@import "./components/comp-header";
-@import "./components/comp-banner";
 @import "./components/comp-breadcrumbs";
+@import "./components/comp-buttons";
+@import "./components/comp-header";
+@import "./components/comp-tabs";
+@import "./components/comp-titling";
+@import "./components/comp-banner";
+@import "./components/comp-personcard";
+@import "./components/comp-profilesidebar";
+@import "./components/comp-selector";
+@import "./components/comp-loader";
 
-// SECTION STYLE
-@import "./pageviews/page_auth.scss";
-@import "./pageviews/page_services.scss";
+// SECTION STYLES
+@import "./pageviews/page_auth";
+@import "./pageviews/page_chat";
+// @import "./pageviews/page_favorites";
+@import "./pageviews/page_services";
+// @import "./pageviews/page_profile";
+// @import "./pageviews/page_requests";
+// @import "./pageviews/page_faq";
+// @import "./pageviews/page_support";
+// @import "./pageviews/page_404";
+// @import "./pageviews/page_moderator";

@@ -16,6 +16,7 @@ const tabs = [
   { title: "solved", isSelected: false },
   { title: "un_solved", isSelected: false },
 ];
+const data = []
 
 const Index = () => {
   const { t } = useTranslation();
@@ -24,8 +25,8 @@ const Index = () => {
   //   link: "/profile/review/customer_page",
   // });
 
-  if (isLoading) return <CustomLoader />;
-  if (isError) return <p>Error</p>;
+  // if (isLoading) return <CustomLoader />;
+  // if (isError) return <p>Error</p>;
 
   return (
     <div className="pffeeds">
@@ -33,7 +34,7 @@ const Index = () => {
       <Tabs tabitems={tabs} />
 
       <div className="pffeeds__list">
-        {data.data.map((item) => (
+        {data.map((item) => (
           <div className="case__card" key={item.id}>
             <div className="case__card-cap">
               <img

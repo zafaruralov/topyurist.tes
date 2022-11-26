@@ -27,9 +27,9 @@ const VerificationSecond = ({ updateCount, formData, pageCount }) => {
   const hiddenFileInputThree = useRef(null);
   const hiddenFileInputFour = useRef(null);
 
-  const handleClickOne = () => {
-    hiddenFileInputOne.current.click();
-  };
+  // const handleClickOne = () => {
+  //   hiddenFileInputOne.current.click();
+  // };
   const handleClickTwo = () => {
     hiddenFileInputTwo.current.click();
   };

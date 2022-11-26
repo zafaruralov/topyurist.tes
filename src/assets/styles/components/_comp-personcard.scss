@@ -1,0 +1,56 @@
+.personcard {
+    display: flex;
+    margin-bottom: 25px;
+
+    img {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        object-fit: cover;
+        border-radius: 100%;
+        margin: 0 15px 0 0;
+        padding: 0;
+    }
+
+    &>div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    &-name {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 120%;
+        color: $mainblack;
+    }
+
+    &-contact {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: $maingrey;
+    }
+}
+
+@media (max-width: 576px) {
+    .personcard {
+        margin-bottom: 20px;
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+
+        &-name {
+            font-size: 14px;
+        }
+
+        &-contact {
+            font-size: 12px;
+        }
+    }
+}
